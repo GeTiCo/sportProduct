@@ -1,0 +1,62 @@
+﻿<Window x:Class="sportProduct.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:sportProduct"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <!--Макет окна-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Заголовок-->
+        <Grid Grid.Row="0" Background="#FFFFCC99" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="/Resources/logo.png" Height="80" Grid.Column="0"/>
+            <TextBlock Text="Авторизация" Style="{StaticResource Title}" Grid.Column="1" 
+                                 HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button x:Name="exit" Style="{StaticResource Title}" Content="Выход"
+                          Grid.Column="2" Margin="20 10" Background="#FFCC6600" Click="exit_Click"/>
+        </Grid>
+
+        <!--Содержательная часть-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.3*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="1" Text="Логин" Style="{StaticResource Normal}" 
+                                HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,5"/>
+            <TextBlock Grid.Row="2" Text="Пароль" Style="{StaticResource Normal}" 
+                                HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,5"/>
+            <TextBox Name="login" Style="{StaticResource Normal}" Grid.Column="1"
+                             Grid.Row="1" HorizontalAlignment="Stretch" 
+                             VerticalAlignment="Stretch" Margin="20,10"/>
+            <PasswordBox Name="password" Style="{StaticResource Normal}" Grid.Column="1" 
+                             Grid.Row="2" HorizontalAlignment="Stretch" 
+                             VerticalAlignment="Stretch" Margin="20,10"/>
+            <Button Name="guest" Style="{StaticResource Title}" Content="Гость" Grid.Row="3" 
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20 10" 
+                          Background="#FFCC6600" Click="guest_Click"/>
+            <Button Name="user" Style="{StaticResource Title}" Grid.Column="1" 
+                          Content="Войти" Grid.Row="3" HorizontalAlignment="Stretch" 
+                         VerticalAlignment="Stretch" Margin="20 10" Background="#FFCC6600" Click="user_Click"/>
+        </Grid>
+    </Grid>
+
+</Window>
